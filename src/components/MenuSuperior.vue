@@ -16,16 +16,16 @@ const menuAberto = ref(false);
       </div>
       <nav>
         <ul :class="menuAberto ? 'menu' : ''">
-          <li>Home</li>
-          <li>Eletrônicos</li>
-          <li>Jóias</li>
-          <li>Masculino</li>
-          <li>Feminino</li>
+          <li class="li">Home</li>
+          <li class="li">Eletrônicos</li>
+          <li class="li">Jóias</li>
+          <li class="li">Masculino</li>
+          <li class="li">Feminino</li>
         </ul>
       </nav>
       <div class="header--icons">
-        <Account />
-        <CartPlus />
+        <Account class="li" />
+        <CartPlus class="li" />
         <Menu class="menu-hamburger" @click="menuAberto = !menuAberto" />
       </div>
     </header>
@@ -64,6 +64,10 @@ nav li {
 }
 .menu-hamburger {
   display: none;
+}
+
+.li{
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

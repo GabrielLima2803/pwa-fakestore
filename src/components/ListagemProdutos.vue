@@ -20,6 +20,9 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
         <!-- <p>{{ produto.description }}</p> -->
         <p>{{ formatPrice(produto.price) }}</p>
         <img class="card--avatar" :src="produto.image" :alt="produto.title" />
+        <div class="container-button">
+          <button class="btn">Adicionar ao Carrino</button>
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +37,20 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
   align-items: center;
   margin: auto;
   padding: 1rem 0;
+}
+.btn{
+  width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fdfdfd;
+    background: #e74c3c;
+    box-shadow: 0px 10px 40px -12px #b9392b;;
 }
 .card {
   display: flex;
@@ -50,7 +67,6 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
 }
 .card--avatar {
   width: 100%;
-  height: 17rem;
   object-fit: cover;
   margin-bottom: 0.5rem;
 }
@@ -60,6 +76,9 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
   text-transform: capitalize;
   font-size: 1.1rem;
   margin-top: 0.5rem;
+}
+
+.container-button{
 }
 
 @media (max-width: 768px) {
