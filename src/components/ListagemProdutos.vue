@@ -7,16 +7,19 @@ onMounted(async () => {
   const response = await api.get('/products');
   produtos.value = response.data;
 });
+const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
+
 </script>
 
 <template>
-  <div class="flex">
+  <div>
     <h1>Produtos</h1>
-    <div class="flex">
-      <div v-for="produto in produtos" :key="produto.id" class="container">
-        <h2>{{ produto.title }}</h2>
-        <p>R$ {{ produto.price }}</p>
-        <img :src="produto.image" :alt="produto.title" width="150"/>
+    <div class="container">
+      <div class="card" v-for="produto in produtos" :key="produto.id">
+        <h1 class="card--title">{{ produto.title }}</h1>
+        <!-- <p>{{ produto.description }}</p> -->
+        <p>{{ formatPrice(produto.price) }}</p>
+        <img class="card--avatar" :src="produto.image" :alt="produto.title" />
       </div>
     </div>
   </div>
@@ -24,40 +27,53 @@ onMounted(async () => {
 
 <style scoped>
 .container {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 1rem 0;
 }
-
-.container:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transform: scale(1.02);
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 15rem;
+  height: 25rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  margin: auto;
+  overflow: hidden;
 }
-.flex {
-  height: 100vh;
-  margin: 0 auto;
-}
-
-.container h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.container p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.container img {
+.card--avatar {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 17rem;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.card--title {
+  color: #222;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    gap: 0.5rem;
+  }
+  .card {
+    width: 92%;
+  }
+}
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    width: 22rem;
+  }
+}
 </style>
