@@ -22,8 +22,7 @@ const {browserWidth, deviceWidth, isMobile} = useScreen()
     </h1>
     <div class="container" >
       <div class="card" v-for="produto in produtos" :key="produto.id" >
-        <h1 class="card--title" :class="isMobile ? 'card-mobile' : ''">{{ produto.title }}</h1>
-        <!-- <p>{{ produto.description }}</p> -->
+        <h1 class="card--title" :class="isMobile ? 'card-mobile' : ''">{{ produto.title }}</h1>        
         <p>{{ formatPrice(produto.price) }}</p>
         <img class="card--avatar" :src="produto.image" :alt="produto.title" />
         <div class="container-button">

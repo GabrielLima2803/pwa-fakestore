@@ -4,32 +4,33 @@ import { ref } from 'vue';
 import CartPlus from 'vue-material-design-icons/CartPlus.vue';
 import Account from 'vue-material-design-icons/Account.vue';
 import Menu from 'vue-material-design-icons/Menu.vue';
+import { useScreen } from '@/composables/screen';
 
+const { isMobile } = useScreen()
 const menuAberto = ref(false);
 </script>
 
 <template>
-    <header>
-      <div class="header--logo">
-        <img src="@/assets/logoFakeStore.png" alt="Logo" />
-        <h1>FakeStore</h1>
-      </div>
-      <nav>
-        <ul :class="menuAberto ? 'menu' : ''">
-          <li class="li">Home</li>
-          <li class="li">Eletrônicos</li>
-          <li class="li">Jóias</li>
-          <li class="li">Masculino</li>
-          <li class="li">Feminino</li>
-        </ul>
-      </nav>
-      <div class="header--icons">
-        <Account class="li" />
-        <CartPlus class="li" />
-        <Menu class="menu-hamburger" @click="menuAberto = !menuAberto" />
-      </div>
-    </header>
-  </template>
+  <header>
+    <div class="header--logo">
+      <img src="@/assets/logoFakeStore.png" alt="Logo" />
+    </div>
+    <nav>
+      <ul :class="menuAberto ? 'menu' : ''">
+        <li class="li">Home</li>
+        <li class="li">Eletrônicos</li>
+        <li class="li">Jóias</li>
+        <li class="li">Masculino</li>
+        <li class="li">Feminino</li>
+      </ul>
+    </nav>
+    <div class="header--icons">
+      <Account class="li" v-if="!isMobile" />
+      <CartPlus class="li" v-if="!isMobile" />
+      <Menu class="menu-hamburger" @click="menuAberto = !menuAberto" />
+    </div>
+  </header>
+</template>
 
 <style scoped>
 header {
@@ -45,15 +46,18 @@ header {
   display: flex;
   align-items: center;
 }
+
 .header--logo img {
   width: 3rem;
   height: 3rem;
   margin-right: 0.5rem;
 }
+
 nav ul {
   display: flex;
   gap: 1rem;
 }
+
 nav li {
   list-style: none;
 }
@@ -62,18 +66,20 @@ nav li {
   display: flex;
   gap: 1rem;
 }
+
 .menu-hamburger {
   display: none;
 }
 
-.li{
-    cursor: pointer;
+.li {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   nav ul {
     display: none;
   }
+
   .menu-hamburger {
     display: block;
   }
@@ -88,7 +94,9 @@ nav li {
     right: 0;
     text-align: right;
     padding: 10px 16px;
+    z-index: 99;
   }
+
   nav .menu li {
     display: block;
     margin-top: 12px;
