@@ -3,7 +3,7 @@ import { onMounted, ref, onUnmounted } from "vue";
 export function useScreen() {
     const browserWidth = ref(window.innerWidth);
     const deviceWidth = ref(screen.width);
-    const isMobile = ref(false)
+    const isMobile = ref(window.innerWidth < 768);
 
     const onBrowserResize = () => {
         browserWidth.value = window.innerWidth;
