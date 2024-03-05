@@ -20,8 +20,6 @@ const menuAberto = ref(false);
         <li class="li">Home</li>
         <li class="li">Eletrônicos</li>
         <li class="li">Jóias</li>
-        <li class="li">Masculino</li>
-        <li class="li">Feminino</li>
       </ul>
     </nav>
     <div class="header--icons">
@@ -66,7 +64,9 @@ nav li {
   display: flex;
   gap: 1rem;
 }
-
+nav{
+  padding-top: 10px;
+}
 .menu-hamburger {
   display: none;
 }
