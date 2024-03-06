@@ -5,7 +5,7 @@
           Sobre Nós
         </h4>
         <p class="about-text">
-          Na FusionCine, somos uma equipe de entusiastas da sétima arte.Cada Filme É Uma História para Ser Contada.
+          Na FakeStore, somos uma equipe de entusiastas da sétima arte.Cada Filme É Uma História para Ser Contada.
         </p>
       </div>
   
@@ -45,20 +45,7 @@
           </router-link>
         </p>
       </div>
-  
-      <div class="ft-main">
-        <h4>
-          Nossas Redes
-        </h4>
-        <p>
-          <a href="https://www.instagram.com/_.lima1/" target="_blank" class="reset" >
-          <span><i class="bi bi-instagram icon"></i></span>
-          </a>
-          <a href="https://www.facebook.com/campaign/landing.php?&campaign_id=1661784632&extra_1=s%7Cc%7C513440386729%7Ce%7Cfacebook%7C&placement=&creative=513440386729&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D1661784632%26adgroupid%3D63686352403%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-541132862%26loc_physical_ms%3D9102346%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiA4NWrBhD-ARIsAFCKwWtH2V4XSRT8opFtgnY4CzyVc8f3Uaov8ddVhgVciDPKwUoZS27-cTEaAuMBEALw_wcB" class="reset" target="_blank">
-          <span><i class="bi bi-facebook mr icon"></i></span>
-          </a>
-        </p>
-      </div>
+
     </div>
   </template>
     
@@ -68,7 +55,7 @@
   }
   
   .reset {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
   
@@ -77,8 +64,8 @@
     flex-direction: row;
     justify-content: space-between;
     margin-left: -40px;
-    background-color: #000000;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
   }
   
   .mr {
@@ -119,9 +106,7 @@
   .header-links {
     text-decoration: none;
     position: relative;
-    /* Importante para posicionar a borda */
     transition: border-bottom 0.3s ease;
-    /* Adiciona uma transição suave à borda */
     cursor: pointer;
   }
   
@@ -132,10 +117,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #43055D;
-    /* Cor da borda */
+    background-color: #e74c3c;
     transition: width 0.3s ease;
-    /* Adiciona uma transição suave à largura da borda */
   
   }
   
@@ -170,7 +153,7 @@
     left: 51%;
     right: 51%;
     bottom: 0;
-    background: #ffffff;
+    background: #e74c3c;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
