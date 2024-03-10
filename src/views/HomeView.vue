@@ -9,8 +9,18 @@ const {isMobile} = useScreen()
 </script>
 
 <template>
-  <MenuSuperior />
-  <ListagemProdutos />
-  <RodaPe v-if="!isMobile"/> 
-  <RodaPeMobile v-else/>
+  <div class="content-wrapper">
+    <MenuSuperior />
+    <ListagemProdutos />
+    <RodaPe v-if="!isMobile"/> 
+    <RodaPeMobile v-else class="mobile"/>
+  </div>
 </template>
+
+<style scoped>
+.content-wrapper {
+  margin-bottom: 60px; 
+  position: relative;
+  z-index: 1; 
+}
+</style>

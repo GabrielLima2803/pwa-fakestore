@@ -20,7 +20,7 @@ const setActiveTab = (tab) => {
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'home' }" @click="setActiveTab('home')">
                     <a class="nav__item-link">
                         <div class="nav__item-icon">
-                            <Home/>
+                            <Home />
                         </div>
                         <span class="nav__item-text">Home</span>
                     </a>
@@ -28,7 +28,7 @@ const setActiveTab = (tab) => {
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'profile' }" @click="setActiveTab('profile')">
                     <a class="nav__item-link">
                         <div class="nav__item-icon">
-                            <CartPlus/>
+                            <CartPlus />
                         </div>
                         <span class="nav__item-text">Carrinho</span>
                     </a>
@@ -37,7 +37,7 @@ const setActiveTab = (tab) => {
                     @click="setActiveTab('messages')">
                     <a class="nav__item-link">
                         <div class="nav__item-icon">
-                            <Account/>
+                            <Account />
                         </div>
                         <span class="nav__item-text">Perfil</span>
                     </a>
@@ -45,7 +45,7 @@ const setActiveTab = (tab) => {
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'help' }" @click="setActiveTab('help')">
                     <a class="nav__item-link">
                         <div class="nav__item-icon">
-                            <Help/>
+                            <Help />
                         </div>
                         <span class="nav__item-text">Ajuda</span>
                     </a>
@@ -74,11 +74,11 @@ nav {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 24px;
-    max-width: 500px;
-    margin: 0 auto;
     left: 0;
     right: 0;
+    /* padding: 24px; */
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .nav-box {
