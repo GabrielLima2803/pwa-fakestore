@@ -1,14 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useScreen } from '@/composables/screen';
+import { useProductStore } from '@/stores/products';
 
-import api from '@/plugins/axios'
-const produtos = ref([]);
+const productStore = useProductStore();
 
-onMounted(async () => {
-  const response = await api.get('/products');
-  produtos.value = response.data;
+onMounted(async() => {
+  await productStore.getAllProducts();
 });
+
 const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
 
 const {browserWidth, deviceWidth, isMobile} = useScreen()
@@ -21,7 +21,7 @@ const {browserWidth, deviceWidth, isMobile} = useScreen()
       Produtos - {{ browserWidth }} - {{ deviceWidth }} - {{ isMobile }}
     </h1>
     <div class="container">
-      <div class="card" v-for="produto in produtos" :key="produto.id">
+      <div class="card" v-for="produto in productStore.products" :key="produto.id">
         <h1 class="card--title" :class="isMobile ? 'card-mobile' : ''">{{ produto.title }}</h1>
         <div class="card-content">
           <img class="card--avatar" :src="produto.image" :alt="produto.title" width="100" />
