@@ -17,11 +17,7 @@ const menuAberto = ref(false);
       <h1>FakeStore - XS</h1>
     </div>
     <nav>
-      <ul :class="menuAberto ? 'menu' : ''">
-        <li class="li">Home</li>
-        <li class="li">Eletrônicos</li>
-        <li class="li">Jóias</li>
-      </ul>
+
     </nav>
     <div class="header--icons">
       <Account class="li" v-if="!isMobile" />
