@@ -25,8 +25,9 @@ const menuAberto = ref(false);
     </nav>
     <div class="header--icons">
       <Account class="li" v-if="!isMobile" />
-      <CartPlus class="li" v-if="!isMobile" />
-      <Menu class="menu-hamburger" @click="menuAberto = !menuAberto" />
+      <router-link to="/carrinho" class="reset">
+        <CartPlus class="li" v-if="!isMobile" />
+      </router-link>      <Menu class="menu-hamburger" @click="menuAberto = !menuAberto" />
     </div>
   </header>
 </template>
@@ -40,7 +41,9 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+.reset{
+  color: black;
+}
 .header--logo {
   display: flex;
   align-items: center;

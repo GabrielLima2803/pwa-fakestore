@@ -18,20 +18,20 @@ const setActiveTab = (tab) => {
         <div class="nav-box">
             <ul class="nav-container">
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'home' }" @click="setActiveTab('home')">
-                    <a class="nav__item-link">
+                    <router-link class="nav__item-link" to="/">
                         <div class="nav__item-icon">
                             <Home />
                         </div>
                         <span class="nav__item-text">Home</span>
-                    </a>
+                    </router-link>
                 </li>
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'profile' }" @click="setActiveTab('profile')">
-                    <a class="nav__item-link">
+                    <router-link class="nav__item-link" to="/carrinho">
                         <div class="nav__item-icon">
                             <CartPlus />
                         </div>
                         <span class="nav__item-text">Carrinho</span>
-                    </a>
+                    </router-link>
                 </li>
                 <li :class="{ 'nav__item': true, 'active': activeTab === 'messages' }"
                     @click="setActiveTab('messages')">
