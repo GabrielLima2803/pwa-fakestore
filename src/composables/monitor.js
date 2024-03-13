@@ -46,5 +46,6 @@ export function useMonitor() {
   return {
     breakpoint,
     menu,
+    footer
   };
 }
